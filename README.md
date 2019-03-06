@@ -1,8 +1,8 @@
 # Recommended way to install truffle on a Linux System
-I you're running Truffle on Linux or MacOS X, you should not install it with sudo, otherwise you might encounter some permission issues. It is recommended to install truffle as a normal user. Before we can install truffle as a normal user we have to cleanup the system. It is also recommended to install nodejs and npm with nvm (node version manager). An advantage of nvm is that you can run different node verions on the same machine.
+I you're running Truffle on Linux or MacOS X, you should not install it with sudo, otherwise you might encounter some permission issues. It is recommended to install truffle as a normal user. Before we can install truffle as a normal user we have to cleanup the system. It is also recommended to install nodejs and npm with nvm (node version manager). An advantage of nvm is that you can run different node versions on the same machine.
 
 ## Cleanup node and npm
-### Remove all packages which have been installe with `sudo npm install -g`
+### Remove all packages which have been installed with `sudo npm install -g`
 First we want to find out which packages have been installed with `sudo npm install -g`.
 Get a list of all installed packages:
 
@@ -28,13 +28,13 @@ If you have additional packages in the tree, you can also remove them.
 
 
 ### Remove node
-If you installed node with a the pakage manager of your Linux distro you can delete the pacakge and skip Remove node anr Remove npm. If you installed it manually you have to delete it manually.
+If you installed node with a the package manager of your Linux distro you can delete the package and skip Remove node and Remove npm. If you installed it manually you have to delete it manually.
 
 We have to find out where node is installed before we can delete it.
 
 `$ whereis node`
 
-in my case I get the follwing output
+in my case I get the following output
 
 `node: /usr/bin/node /usr/share/man/man1/node.1.gz`
 
