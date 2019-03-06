@@ -76,19 +76,23 @@ In order to load the new environment you have to close your console and open a n
 
 
 ## Install node.js with nvm
+
 `$ nvm install node # "node" is an alias for the latest version`
 
 Install the latest npm version
+
 `$ npm install -g npm`
 
 
 ## Delete and reset the npm prefix
-https://stackoverflow.com/questions/34718528/nvm-is-not-compatible-with-the-npm-config-prefix-option
+See: https://stackoverflow.com/questions/34718528/nvm-is-not-compatible-with-the-npm-config-prefix-option
 
 `$ npm config delete prefix`
+
 `$ npm config set prefix $NVM_DIR/versions/node/v11.10.0`
 
 Install truffle as a normal user
 
 `$ npm install -g truffle`
+
 and install the other packages which you had installed as sudo, such as ganache-cli or create-react-app.
