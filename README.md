@@ -1,11 +1,9 @@
 # Recommended way to install truffle on a Linux System
-I you're running Truffle on Linux or MacOS X, you should not install it with sudo, otherwise you might encounter some permission issues.
-
-It is recommended to install truffle as a normal user. The easiest and cleanest way to install nodejs is to use nvm. To do this you can follow the instructions below. 
+I you're running Truffle on Linux or MacOS X, you should not install it with sudo, otherwise you might encounter some permission issues. It is recommended to install truffle as a normal user. The easiest and cleanest way to install nodejs is to use nvm. To do this you can follow the instructions below. 
 
 
-## Remove all global packages which have been installed with sudo
-
+## Find all global packages which have been installed with sudo
+First we want to find out which packages have been installed with `sudo npm install -g`.
 Get a list of all installed packages:
 `$ sudo npm list -g --depth=0`
 ```
@@ -16,6 +14,7 @@ Get a list of all installed packages:
 ```
 
 ## Remove all packages:
+Now we want to remove them
 `$ sudo npm remove -g anache-cli`
 `$ sudo npm remove -g truffle`
 `$ sudo npm remove -g npm`
@@ -24,9 +23,12 @@ If you have additional packages in the tree you can also remove them
 
 
 ## Remove node
-`$ whereis node`
-in my case I get the follwing output
+If you installed node with a the pakage manager of your Linux distro you can delete the pacakge and skip Remove node anr Remove npm. If you installed it manually you have to delete it manually.
 
+We have to find out where node is installed before we can delete it.
+`$ whereis node`
+
+in my case I get the follwing output
 `node: /usr/bin/node /usr/share/man/man1/node.1.gz`
 
 find the location of node_modules node and delete it
@@ -49,7 +51,6 @@ Depending on the linux distribution you might have different paths
 Now that we have cleaned up everything we can start with the installation of nvm and node
 
 
-
 ## Install nvm (node version manager)
 See: https://github.com/creationix/nvm
 
@@ -58,9 +59,7 @@ See: https://github.com/creationix/nvm
 In order to load the new environment you have to close your console and open a new one
 
 
-
 ## Install node.js with nvm
-
 `$ nvm install node # "node" is an alias for the latest version`
 
 Install the latest npm version
@@ -68,7 +67,6 @@ Install the latest npm version
 
 
 ## Delete and reset the npm prefix
-
 https://stackoverflow.com/questions/34718528/nvm-is-not-compatible-with-the-npm-config-prefix-option
 
 `$ npm config delete prefix`
@@ -77,3 +75,4 @@ https://stackoverflow.com/questions/34718528/nvm-is-not-compatible-with-the-npm-
 Install truffle as a normal user
 
 `$ npm install -g truffle`
+and install the other packages which you had installed as sudo, such as ganache-cli or create-react-app.
