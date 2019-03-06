@@ -97,4 +97,4 @@ If everything went as expected truffle should be installed in:
 
 `~/.nvm/versions/node/v11.10.0/bin/truffle`
 
-and install the other packages which you had installed as sudo, such as ganache-cli or create-react-app.
+Install the other packages which you had installed as sudo, such as ganache-cli or create-react-app.
