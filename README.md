@@ -5,7 +5,9 @@ I you're running Truffle on Linux or MacOS X, you should not install it with sud
 ## Find all global packages which have been installed with sudo
 First we want to find out which packages have been installed with `sudo npm install -g`.
 Get a list of all installed packages:
+
 `$ sudo npm list -g --depth=0`
+
 ```
 /usr/lib 
 |--ganache-cli@6.1.8 
@@ -15,35 +17,49 @@ Get a list of all installed packages:
 
 ## Remove all packages:
 Now we want to remove them
+
 `$ sudo npm remove -g anache-cli`
+
 `$ sudo npm remove -g truffle`
+
 `$ sudo npm remove -g npm`
 
-If you have additional packages in the tree you can also remove them
+
+If you have additional packages in the tree, you can also remove them.
 
 
 ## Remove node
 If you installed node with a the pakage manager of your Linux distro you can delete the pacakge and skip Remove node anr Remove npm. If you installed it manually you have to delete it manually.
 
 We have to find out where node is installed before we can delete it.
+
 `$ whereis node`
 
 in my case I get the follwing output
+
 `node: /usr/bin/node /usr/share/man/man1/node.1.gz`
 
 find the location of node_modules node and delete it
+
 `$ sudo rm /usr/bin/node /usr/share/man/man1/node.1.gz`
 
 
 ## Remove npm
+
+We have to find out where npm is installed before we can delete it.
+
 `$ sudo whereis npm`
+
 in my case I get the follwing output:
+
 `npm: /usr/bin/npm /usr/share/man/man1/npm.1.gz /usr/share/man/man1/npm.1`
 
 `$ sudo ls -l /usr/bin/npm`
+
 `lrwxrwxrwx 1 root root 38 Feb  4 08:47 /usr/bin/npm -> ../lib/node_modules/npm/bin/npm-cli.js`
 
 `$ sudo rm -rf /usr/bin/npm /usr/lib/node_modules/npm/bin/npm`
+
 `$ sudo rm -rf /usr/share/man/man1/npm.1.gz /usr/share/man/man1/npm.1`
 
 Depending on the linux distribution you might have different paths
