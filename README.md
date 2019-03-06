@@ -1,8 +1,7 @@
 # Recommended way to install truffle on a Linux System
-I you're running Truffle on Linux or MacOS X, you should not install it with sudo, otherwise you might encounter some permission issues. It is recommended to install truffle as a normal user. The easiest and cleanest way to install nodejs is to use nvm. To do this you can follow the instructions below. 
+I you're running Truffle on Linux or MacOS X, you should not install it with sudo, otherwise you might encounter some permission issues. It is recommended to install truffle as a normal user. Before we can install truffle as a normal user we have to cleanup the system. It is also recommended to install nodejs and npm with nvm (node version manager). An advantage of nvm is that you can run different node verions on the same machine.
 
 ## Cleanup node and npm
-
 ### Remove all packages which have been installe with `sudo npm install -g`
 First we want to find out which packages have been installed with `sudo npm install -g`.
 Get a list of all installed packages:
@@ -75,11 +74,9 @@ In order to load the new environment you have to close your console and open a n
 
 
 ### Install node.js with nvm
-
 `$ nvm install node # "node" is an alias for the latest version`
 
 ### Install the latest npm version
-
 `$ npm install -g npm`
 
 
@@ -91,11 +88,9 @@ See: https://stackoverflow.com/questions/34718528/nvm-is-not-compatible-with-the
 `$ npm config set prefix $NVM_DIR/versions/node/v11.10.0`
 
 ## Install truffle and other packages as a normal user
-
 `$ npm install -g truffle`
 
 ## Check the installation
-
 `$ whereis truffle`
 
 If everything went as expected truffle should be installed in:
